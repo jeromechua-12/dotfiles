@@ -1,0 +1,116 @@
+@define-color bg-color #2e3440; 
+@define-color bg-alt-color #434c5e;
+@define-color border-color #81a1c1; 
+@define-color text-white #eceff4;
+@define-color text-blue #81a1c1;
+@define-color text-orange #f4b38b;
+@define-color text-yellow #ebcb8b;
+@define-color text-green #a3be8c;
+@define-color text-red #eb6f92;
+
+
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", "Source Han Sans CN", "Source Han Sans JP", "Source Han Sans KR";
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: @bg-color;
+    border-bottom: 2px solid @border-color;
+    color: @text; 
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px @text-white;
+}
+
+/* Workspaces */
+
+#window,
+#workspaces {
+    margin: 2px 4px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @text-white;
+    margin-bottom: 1px;
+}
+
+#workspaces button:hover {
+    background: transparent;
+}
+
+#workspaces button.focused, #workspaces button.active {
+    background-color: @bg-alt-color;
+}
+
+#workspaces button.urgent {
+    background-color: @urgent;
+}
+
+#cpu,
+#memory,
+#network,
+#custom-bluetooth,
+#custom-language,
+#pulseaudio {
+    background: transparent;
+    margin: 2px 0;
+    padding: 0 8px;
+}
+
+#clock:hover,
+#pulseaudio:hover,
+#network:hover,
+#custom-bluetooth:hover,
+#custom-language:hover,
+#cpu:hover,
+#memory:hover,
+#custom-control-center:hover {
+    background: transparent;
+}
+
+#clock {
+    color: @text-yellow;
+    background: transparent;
+    margin: 2px 0px 2px 8px;
+}
+
+
+#utilities {
+    color: @text-blue;
+}
+
+#hardware {
+    color: @text-orange;
+}
+
+#custom-bluetooth {
+    font-size: 16px;
+}
+
+#custom-language {
+    color: @text-green;
+}
+
+#custom-control-center {
+    color: @text-blue;
+    background: transparent;
+    margin: 2px 8px 2px 0px;
+}

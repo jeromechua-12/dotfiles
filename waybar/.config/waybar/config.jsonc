@@ -1,0 +1,145 @@
+{
+    "layer": "top",
+    "spacing": 5,  /* space between modules */
+    "modules-left": [
+        "clock"
+    ],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [
+        "group/utilities",
+        "custom/language",
+        "group/hardware",
+        "custom/control-center"
+    ],
+    "custom/openbracket": {
+        "format": "[",
+            "tooltip": false
+    },
+    "custom/closebracket": {
+        "format": "]",
+        "tooltip": false
+    },    
+    "custom/split": {
+        "format": "|",
+        "tooltip": false
+    },
+    "clock": {
+        "format": "{:%a %d %b  %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        },
+        "interval": 60,
+        "on-click": "gnome-calendar"
+    },
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },
+        "sort-by-number": true
+    },
+    "group/utilities": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/openbracket",
+            "pulseaudio",
+            "custom/split",
+            "network",
+            "custom/split",
+            "custom/bluetooth",
+            "custom/closebracket"
+        ]
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""],
+            "headphone": "",
+            "headset": ""
+        },
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": "󰈀 LAN",
+        "format-disconnected": "󰖪", 
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 5,
+        "on-click": "kitty nmtui"
+    },
+    "custom/bluetooth": {
+        "exec": "~/.config/waybar/scripts/bluetooth.sh",
+        "return-type": "json",
+        "format": "{text}",
+        "interval": 1,
+        "on-click": "blueman-manager"
+    },
+    "custom/language": {
+        "exec": "~/.config/waybar/scripts/fcitx5.sh",
+        "return-type": "json",
+        "format": "[  {text} ]",
+        "interval": 1,
+        "on-click": "fcitx5-configtool"
+    },
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/openbracket",
+            "cpu",
+            "custom/split",
+            "memory",
+            "custom/closebracket"
+        ]
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip-format": "{avg_frequency}",
+        "on-click": "kitty btop"
+    },
+    "memory": {
+        "format": " {used}G",
+        "tooltip-format": "{used}G/{total}G",
+        "on-click": "kitty btop"
+    },
+    "custom/control-center": {
+        "format" : "[ 󰣇 ]",
+        "tooltip": false,
+        "on-click": "swaync-client -t"
+    }
+}

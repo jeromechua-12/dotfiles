@@ -16,47 +16,26 @@ require('mason-lspconfig').setup({
 })
 
 -- cmp
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-cmp.setup({
-    snippet = {
-        -- REQUIRED - you must specify a snippet engine
-        expand = function(args)
-            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-            -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-            -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-            vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+require('blink.cmp').setup({
+    keymap = { preset = 'default' },
 
-            -- For `mini.snippets` users:
-            -- local insert = MiniSnippets.config.expand.insert or MiniSnippets.default_insert
-            -- insert({ body = args.body }) -- Insert at cursor
-            -- cmp.resubscribe({ "TextChangedI", "TextChangedP" })
-            -- require("cmp.config").set_onetime({ sources = {} })
-        end,
+    appearance = {
+        nerd_font_variant = 'mono'
     },
-    window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+
+    completion = {
+        documentation = { auto_show = true }
     },
-    mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    }),
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        -- { name = 'vsnip' }, -- For vsnip users.
-        -- { name = 'luasnip' }, -- For luasnip users.
-        -- { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' }, -- For snippy users.
-    }, {
-        { name = 'buffer' },
-    })
+
+    sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+    },
+
+    fuzzy = {
+        implementation = 'prefer_rust_with_warning'
+    },
+
+    signature = { enabled = true },
 })
 
 -- diagnostic
@@ -72,7 +51,7 @@ vim.filetype.add({
     },
 })
 
--- lua lsp config
+-- lsp configs
 vim.lsp.config('lua_ls', {
     filetypes = { 'lua' },
     settings = {
@@ -80,17 +59,12 @@ vim.lsp.config('lua_ls', {
             diagnostics = {
                 globals = { 'vim', 'require' },
             },
-            -- workspace = {
-            --     -- Make server aware of Neovim runtime files
-            --     library = vim.api.nvim_get_runtime_file("", true),
-            -- },
         }
     },
 })
 
--- go lsp config
 vim.lsp.config('gopls', {
-    filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' }
+    filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
 })
 
 -- enable servers

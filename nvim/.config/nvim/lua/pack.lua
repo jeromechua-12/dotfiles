@@ -5,17 +5,14 @@ vim.pack.add({
     -- statusline
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
 
-    -- lsp with mason
+    -- lsp & mason
     { src = 'https://github.com/neovim/nvim-lspconfig' },
     { src = 'https://github.com/mason-org/mason.nvim' },
     { src = 'https://github.com/mason-org/mason-lspconfig.nvim' },
 
     -- cmp
-    { src = 'https://github.com/hrsh7th/cmp-nvim-lsp' },
-    { src = 'https://github.com/hrsh7th/cmp-buffer' },
-    { src = 'https://github.com/hrsh7th/cmp-path' },
-    { src = 'https://github.com/hrsh7th/cmp-cmdline' },
-    { src = 'https://github.com/hrsh7th/nvim-cmp' },
+    { src = 'https://github.com/rafamadriz/friendly-snippets' },
+    { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('1.*') },
 
     -- treesitter
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', branch = 'main' },

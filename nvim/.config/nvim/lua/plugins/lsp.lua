@@ -64,6 +64,14 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
+-- add file types
+vim.filetype.add({
+    extension = {
+        tmpl = 'gotmpl',
+        gotmpl = 'gotmpl',
+    },
+})
+
 -- lua lsp config
 vim.lsp.config('lua_ls', {
     filetypes = { 'lua' },
@@ -78,6 +86,11 @@ vim.lsp.config('lua_ls', {
             -- },
         }
     },
+})
+
+-- go lsp config
+vim.lsp.config('gopls', {
+    filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' }
 })
 
 -- enable servers

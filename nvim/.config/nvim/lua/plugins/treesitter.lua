@@ -3,6 +3,7 @@ local ensure_installed = {
     'css',
     'dockerfile',
     'go',
+    'gotmpl',
     'html',
     'java',
     'javascript',

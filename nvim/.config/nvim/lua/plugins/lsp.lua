@@ -1,18 +1,16 @@
 -- mason
 require('mason').setup()
 require('mason-lspconfig').setup({
-    opts = {
-        ensure_installed = {
-            'clangd',
-            'cssls',
-            'gopls',
-            'html',
-            'jsonls',
-            'lua_ls',
-            'pyright',
-            'ts_ls'
-        }
-    }
+    ensure_installed = {
+        'clangd',
+        'cssls',
+        'gopls',
+        'html',
+        'jsonls',
+        'lua_ls',
+        'pyright',
+        'ts_ls'
+    },
 })
 
 -- cmp

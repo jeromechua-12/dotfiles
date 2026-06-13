@@ -75,7 +75,7 @@
             "custom/split",
             "network",
             "custom/split",
-            "custom/bluetooth",
+            "bluetooth",
             "custom/closebracket"
         ]
     },
@@ -96,6 +96,7 @@
         "format-wifi": " {signalStrength}%",
         "format-ethernet": "󰈀 LAN",
         "format-disconnected": "󰖪", 
+        "format-disabled": "󰖪", 
         "tooltip-format": "{ifname} via {gwaddr}",
         "tooltip-format-wifi": "{essid}",
         "tooltip-format-ethernet": "{ifname}",
@@ -103,19 +104,20 @@
         "interval": 5,
         "on-click": "kitty nmtui"
     },
-    "custom/bluetooth": {
-        "exec": "~/.config/waybar/scripts/bluetooth.sh",
-        "return-type": "json",
-        "format": "{text}",
-        "interval": 1,
+    "bluetooth": {
+        "format": "",
+        "format-connected": "",
+        "format-off": "󰂲",
+        "tooltip-format": "{num_connections} connected",
+        "tooltip-format-off": "Bluetooth off",
         "on-click": "blueman-manager"
     },
     "custom/language": {
         "exec": "~/.config/waybar/scripts/fcitx5.sh",
         "return-type": "json",
         "format": "[  {text} ]",
-        "interval": 1,
-        "on-click": "fcitx5-configtool"
+        "interval": 2,
+        "on-click": "fcitx5-remote -t"
     },
     "group/hardware": {
         "orientation": "horizontal",

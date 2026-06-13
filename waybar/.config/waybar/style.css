@@ -67,7 +67,7 @@ button:hover {
 #cpu,
 #memory,
 #network,
-#custom-bluetooth,
+#bluetooth,
 #custom-language,
 #pulseaudio {
     background: transparent;
@@ -78,7 +78,7 @@ button:hover {
 #clock:hover,
 #pulseaudio:hover,
 #network:hover,
-#custom-bluetooth:hover,
+#bluetooth:hover,
 #custom-language:hover,
 #cpu:hover,
 #memory:hover,
@@ -101,7 +101,7 @@ button:hover {
     color: @text-orange;
 }
 
-#custom-bluetooth {
+#bluetooth {
     font-size: 16px;
 }
 

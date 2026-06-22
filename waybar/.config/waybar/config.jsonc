@@ -1,0 +1,109 @@
+{
+    "layer": "top",
+    "spacing": 5,
+    "output": "DP-2",
+    "modules-left": [
+        "clock"
+    ],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "cpu",
+        "memory",
+        "custom/control-center"
+    ],
+    "clock": {
+        "format": "{:%a %d %b  %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        },
+        "interval": 60,
+        "on-click": "gnome-calendar"
+    },
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },
+        "sort-by-number": true
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""],
+            "headphone": "",
+            "headset": ""
+        },
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": "󰈀 LAN",
+        "format-disconnected": "󰖪", 
+        "format-disabled": "󰖪", 
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 5,
+        "on-click": "kitty nmtui"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-connected": "",
+        "format-off": "󰂲",
+        "tooltip-format": "{num_connections} connected",
+        "tooltip-format-off": "Bluetooth off",
+        "on-click": "blueman-manager"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip-format": "{avg_frequency}",
+        "on-click": "kitty btop"
+    },
+    "memory": {
+        "format": " {used:0.1f}G",
+        "tooltip-format": "{used:0.1f}G/{total:0.1f}G",
+        "on-click": "kitty btop"
+    },
+    "custom/control-center": {
+        "format" : "󰣇",
+        "tooltip": false,
+        "on-click": "swaync-client -t"
+    }
+}

@@ -1,0 +1,79 @@
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", "Source Han Sans CN", "Source Han Sans JP", "Source Han Sans KR";
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: #2e3440;
+    color: white; 
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+
+#window,
+#workspaces {
+    margin: 2px 4px;
+}
+
+#workspaces button {
+    background: transparent;
+    color: white;
+    margin: 1px 2px;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+#workspaces button.active {
+    background: #88c0d0;
+    color: black;
+}
+
+#workspaces button.urgent {
+    background: #ed8796;
+}
+
+#workspaces button:not(.active):hover {
+    background: #4c566a;
+    color: white;
+    border-color: transparent;
+}
+
+#workspaces button.active:hover {
+    background: #88c0d0;
+    border-color: transparent;
+}
+
+#cpu,
+#memory,
+#network,
+#bluetooth,
+#custom-language,
+#pulseaudio {
+    background: #3b4252;
+    color: white;
+    margin: 5px 0px;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+#clock {
+    color: white;
+    background: transparent;
+    margin: 5px 0px 5px 6px;
+    padding: 0 8px;
+}
+
+#bluetooth {
+    font-size: 14px;
+}
+
+#custom-control-center {
+    background: #3b4252;
+    color: white;
+    margin: 5px 6px 5px 0px;
+    padding: 0 8px;
+    border-radius: 4px;
+}

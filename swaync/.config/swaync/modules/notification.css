@@ -1,0 +1,83 @@
+:root {
+    --bg-color: #2e3440;
+    --bg-alt-color: #3b4252;
+    --bg-2: #4c566a;
+    --text: #eceff4;
+    --border-color: #81a1c1;
+    --hover-color: #4c566a;
+    --active: #81a1c1;
+    --cyan: #88c0d0;
+    --yellow: #ebcb8b;
+    --notif-icon-size: 48px;
+    --border-radius: 8px;
+}
+
+
+* {
+    font-family: JetBrainsMono Nerd Font Propo;
+    font-size: 14px;
+    transition: 200ms;
+}
+
+/* Floating notification */
+.floating-notifications .notification-row {
+    background: none;
+    outline: none;
+    padding: 4px;
+    margin: 14px 8px 0px 0px;
+}
+
+.floating-notifications .notification-row .notification-background {
+    background: transparent;
+}
+
+.floating-notifications .notification-row .notification-background .notification {
+    background: var(--bg-alt-color);
+    border-radius: var(--border-radius);
+}
+
+.floating-notifications .notification-row .notification-background .notification .body {
+    color: var(--yellow);
+}
+
+.floating-notifications .notification-row .notification-background .notification .summary {
+    color: var(--cyan);
+    font-size: 15px;
+    font-style: italic;
+}
+
+.floating-notifications .notification-row .notification-background .notification .image {
+    -gtk-icon-size: var(--notif-icon-size);
+    margin-right: 10px;
+}
+
+.floating-notifications .notification-row .notification-background .notification .time {
+    color: var(--yellow);
+}
+
+.floating-notifications .notification-row .notification-background .notification .notification-default-action:hover {
+    background: var(--hover-color);
+    border-radius: 8px;
+}
+
+/* Notification close button */
+.close-button {
+  background: var(--hover-color);
+  color: var(--text);
+  text-shadow: none;
+  padding: 0;
+  border-radius: 100%;
+  margin-top: 8px;
+  margin-right: 8px;
+  box-shadow: none;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: var(--hover-color);
+  border: none;
+}
+

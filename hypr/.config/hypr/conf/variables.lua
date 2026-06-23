@@ -5,7 +5,7 @@
 local variables = {}
 
 -- screenshot path
-local screenshotPath = "$HOME/Pictures/screenshots/"
+local screenshotPath = "Pictures/screenshots/"
 variables.screenshotPath = screenshotPath
 
 -- programs

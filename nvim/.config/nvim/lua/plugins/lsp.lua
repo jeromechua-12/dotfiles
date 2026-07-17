@@ -9,13 +9,16 @@ require('mason-lspconfig').setup({
         'jsonls',
         'lua_ls',
         'pyright',
-        'ts_ls'
+        'vtsls'
     },
 })
 
 -- cmp
 require('blink.cmp').setup({
-    keymap = { preset = 'default' },
+    keymap = {
+        preset = 'default',
+        ['<C-k>'] = { function(cmp) return cmp.show() end },
+    },
 
     appearance = {
         nerd_font_variant = 'mono'
@@ -74,5 +77,5 @@ vim.lsp.enable({
     'jsonls',
     'lua_ls',
     'pyright',
-    'ts_ls'
+    'vtsls'
 })

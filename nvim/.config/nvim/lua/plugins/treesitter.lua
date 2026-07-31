@@ -1,7 +1,6 @@
 local ensure_installed = {
     'c',
     'css',
-    'dockerfile',
     'go',
     'gotmpl',
     'html',

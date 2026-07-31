@@ -28,8 +28,8 @@ vim.pack.add({
     { src = 'https://github.com/catgoose/nvim-colorizer.lua' },
 
     -- harpoon
-    { src = 'https://github.com/nvim-lua/plenary.nvim', tag = '0.1.4' },
-    { src = 'https://github.com/ThePrimeagen/harpoon', version = '0378a6c428a0bed6a2781d459d7943843f374bce' },
+    -- { src = 'https://github.com/nvim-lua/plenary.nvim', tag = '0.1.4' },
+    -- { src = 'https://github.com/ThePrimeagen/harpoon', version = '0378a6c428a0bed6a2781d459d7943843f374bce' },
 })
 
 require('plugins.catppucin')
@@ -39,4 +39,4 @@ require('plugins.treesitter')
 require('plugins.fzf-lua')
 require('plugins.fugitive')
 require('plugins.colorizer')
-require('plugins.harpoon')
+-- require('plugins.harpoon')

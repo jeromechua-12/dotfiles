@@ -2,13 +2,14 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
     ensure_installed = {
+        'basedpyright',
         'clangd',
         'cssls',
         'gopls',
         'html',
         'jsonls',
         'lua_ls',
-        'pyright',
+        'ruff',
         'vtsls'
     },
 })
@@ -68,14 +69,25 @@ vim.lsp.config('gopls', {
     filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
 })
 
+vim.lsp.config('basedpyright', {
+    settings = {
+        basedpyright = {
+            analysis = {
+                typeCheckingMode = 'standard',
+            },
+        },
+    },
+})
+
 -- enable servers
 vim.lsp.enable({
+    'basedpyright',
     'clangd',
     'cssls',
     'gopls',
     'html',
     'jsonls',
     'lua_ls',
-    'pyright',
+    'ruff',
     'vtsls'
 })

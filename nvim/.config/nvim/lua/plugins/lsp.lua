@@ -42,7 +42,10 @@ require('blink.cmp').setup({
 
 -- diagnostic
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = false,
+    virtual_lines = { current_line = true },
+    underline = true,
+    signs = true
 })
 
 -- add file types

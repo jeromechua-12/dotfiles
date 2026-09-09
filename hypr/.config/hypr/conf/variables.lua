@@ -11,7 +11,7 @@ variables.screenshotPath = screenshotPath
 -- programs
 variables.programs = {}
 variables.programs.terminal = "kitty"
-variables.programs.fileManager = "dolphin"
+variables.programs.fileManager = "thunar"
 variables.programs.menu = "rofi -show drun"
 variables.programs.browser = "firefox"
 variables.programs.screenshotRegion = "hyprshot -m region"

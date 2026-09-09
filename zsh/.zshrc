@@ -49,3 +49,6 @@ export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 # python uv
 source "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
+
+# manpage
+export MANPAGER="nvim +Man!"

@@ -1,6 +1,6 @@
 require("conf/aesthetics")
 require("conf/autostart")
-require("conf/environment")
+--require("conf/environment")  -- moved to /.config/uwsm/env
 require("conf/inputs")
 require("conf/keybindings")
 require("conf/monitors")

@@ -8,7 +8,8 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 hl.bind(mainMod .. " + T",          hl.dsp.exec_cmd(programs.terminal))
 hl.bind(mainMod .. " + Q",          hl.dsp.window.close())
-hl.bind(mainMod .. " + SHIFT + M",  hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+--hl.bind(mainMod .. " + SHIFT + M",  hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + SHIFT + M",  hl.dsp.exec_cmd("uwsm stop"))
 hl.bind(mainMod .. " + E",          hl.dsp.exec_cmd(programs.fileManager))
 hl.bind(mainMod .. " + V",          hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE",      hl.dsp.exec_cmd(programs.menu))

@@ -23,18 +23,19 @@ vim.keymap.set("n", "<leader>pp", "\"+p")
 -- void registry 
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>x", "\"_x")
 
 -- escape
 -- vim.keymap.set("i", "jk", "<Esc>")
 -- vim.keymap.set("v", "jk", "<Esc>")
 
 -- terminal
-vim.keymap.set("n", "<leader>tt", ":set splitright<CR>:vert term<CR>i")
-vim.keymap.set("n", "<leader>th", ":below term<CR>i")
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+-- vim.keymap.set("n", "<leader>tt", ":set splitright<CR>:vert term<CR>i")
+-- vim.keymap.set("n", "<leader>th", ":below term<CR>i")
+-- vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 -- select all
-vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+-- vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- built-in undo-tree
 vim.keymap.set("n", "<leader>u", function()

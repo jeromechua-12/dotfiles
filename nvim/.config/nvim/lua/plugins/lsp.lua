@@ -18,7 +18,7 @@ require('mason-lspconfig').setup({
 require('blink.cmp').setup({
     keymap = {
         preset = 'default',
-        ['<C-k>'] = { function(cmp) return cmp.show() end },
+        ['<C-k>'] = { 'show', 'show_documentation', 'hide_documentation' },
     },
 
     appearance = {
@@ -26,8 +26,9 @@ require('blink.cmp').setup({
     },
 
     completion = {
-        documentation = { auto_show = true }
+        documentation = { auto_show = false },
     },
+
 
     sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },
@@ -42,10 +43,14 @@ require('blink.cmp').setup({
 
 -- diagnostic
 vim.diagnostic.config({
-    virtual_text = false,
-    virtual_lines = { current_line = true },
     underline = true,
-    signs = true
+    signs = true,
+    float = {
+        anchor_bias = 'auto',
+        border = 'rounded',
+        focus = 'true',
+        source = 'if_many',
+    },
 })
 
 -- add file types

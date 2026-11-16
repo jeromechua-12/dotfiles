@@ -14,7 +14,15 @@ vim.opt.smartindent = true
 
 -- 2 space indent for js, ts, html, css
 vim.api.nvim_create_autocmd('FileType', {
-    pattern  =  { "javascript", "typescript", "javascriptreact", "typescriptreact", "css", "html" },
+    pattern  =  {
+        "css",
+        "html",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "typescript",
+        "typescriptreact",
+    },
     callback = function()
         vim.opt_local.tabstop = 2
         vim.opt_local.shiftwidth = 2
@@ -34,8 +42,8 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 -- vertical column line
---vim.opt.textwidth = 120
---vim.opt.colorcolumn = "+1"
+vim.opt.textwidth = 100
+vim.opt.colorcolumn = "+1"
 
 -- disable comment continutation
 vim.api.nvim_create_autocmd("BufEnter", {
